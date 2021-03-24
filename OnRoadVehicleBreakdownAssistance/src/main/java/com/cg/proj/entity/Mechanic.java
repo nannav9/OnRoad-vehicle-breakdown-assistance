@@ -13,16 +13,6 @@ public class Mechanic {
 	private String mechanicPassword;
 	private String mechanicLocation;
 
-	public Mechanic(int mechanicId, int mechanicMobileNumber, String mechanicName, String mechanicPassword,
-			String mechanicLocation) {
-		super();
-		this.mechanicId = mechanicId;
-		this.mechanicMobileNumber = mechanicMobileNumber;
-		this.mechanicName = mechanicName;
-		this.mechanicPassword = mechanicPassword;
-		this.mechanicLocation = mechanicLocation;
-	}
-
 	public int getMechanicId() {
 		return mechanicId;
 	}
@@ -66,6 +56,16 @@ public class Mechanic {
 	public Mechanic() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+
+	public Mechanic(int mechanicId, int mechanicMobileNumber, String mechanicName, String mechanicPassword,
+			String mechanicLocation) {
+		super();
+		this.mechanicId = mechanicId;
+		this.mechanicMobileNumber = mechanicMobileNumber;
+		this.mechanicName = mechanicName;
+		this.mechanicPassword = mechanicPassword;
+		this.mechanicLocation = mechanicLocation;
 	}
 
 	@Override

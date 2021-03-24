@@ -56,11 +56,14 @@ public class Feedback {
 	public void setFeedback(String feedback) {
 		this.feedback = feedback;
 	}
-	public Feedback(String userName, String mechanicName, int rating, String feedback) {
+	
+	public Feedback(int feedbackId, int rating, String feedback, User user, Mechanic mechanic) {
 		super();
-		
+		this.feedbackId = feedbackId;
 		this.rating = rating;
 		this.feedback = feedback;
+		this.user = user;
+		this.mechanic = mechanic;
 	}
 	@Override
 	public String toString() {
