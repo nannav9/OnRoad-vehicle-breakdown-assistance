@@ -1,26 +1,48 @@
 package com.cg.proj.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Feedback")
+@Table(name="vehicle_feedback")
 public class Feedback {
-	String userName;
-	String mechanicName;
-	int rating;
-	String feedback;
-	public String getUserName() {
-		return userName;
+	@Id
+	@Column(name="feedback_id")
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int feedbackId;
+	private int rating;
+
+	private String feedback;
+	@ManyToOne
+	@JoinColumn(name="user_id",referencedColumnName = "user_id")
+	private User user;
+	@ManyToOne
+	@JoinColumn(name="mechanic_id",referencedColumnName = "mechanic_id")
+	private Mechanic mechanic;
+	
+	public int getFeedbackId() {
+		return feedbackId;
 	}
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setFeedbackId(int feedbackId) {
+		this.feedbackId = feedbackId;
 	}
-	public String getMechanicName() {
-		return mechanicName;
+	public User getUser() {
+		return user;
 	}
-	public void setMechanicName(String mechanicName) {
-		this.mechanicName = mechanicName;
+	public void setUser(User user) {
+		this.user = user;
+	}
+	public Mechanic getMechanic() {
+		return mechanic;
+	}
+	public void setMechanic(Mechanic mechanic) {
+		this.mechanic = mechanic;
 	}
 	public int getRating() {
 		return rating;
@@ -36,14 +58,13 @@ public class Feedback {
 	}
 	public Feedback(String userName, String mechanicName, int rating, String feedback) {
 		super();
-		this.userName = userName;
-		this.mechanicName = mechanicName;
+		
 		this.rating = rating;
 		this.feedback = feedback;
 	}
 	@Override
 	public String toString() {
-		return "Feedback [userName=" + userName + ", mechanicName=" + mechanicName + ", rating=" + rating
+		return "Feedback [ rating=" + rating
 				+ ", feedback=" + feedback + "]";
 	}
 	public Feedback() {

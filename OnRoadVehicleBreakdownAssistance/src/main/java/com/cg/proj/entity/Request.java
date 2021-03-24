@@ -1,17 +1,26 @@
 package com.cg.proj.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Req")
+@Table(name = "Vehicle_request")
 public class Request {
 	@Id
-	@GeneratedValue
+	@Column(name="request_id")
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int requestId;
+	@ManyToOne
+	@JoinColumn(name="user_id",referencedColumnName = "user_id")
 	private User user;
+	@ManyToOne
+	@JoinColumn(name="mechanic_id",referencedColumnName = "mechanic_id")
 	private Mechanic mech;
 	private String userLocation;
 	private String requestStatus;

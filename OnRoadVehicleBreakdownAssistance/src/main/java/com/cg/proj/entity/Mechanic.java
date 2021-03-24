@@ -3,9 +3,10 @@ package com.cg.proj.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "mech")
+@Table(name = "vehicle_mechanic")
 public class Mechanic {
     @Id
+    @Column(name="mechanic_id")
 	private int mechanicId;
 	private int mechanicMobileNumber;
 	private String mechanicName;

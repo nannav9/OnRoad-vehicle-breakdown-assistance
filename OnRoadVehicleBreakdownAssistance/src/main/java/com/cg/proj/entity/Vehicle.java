@@ -2,6 +2,9 @@ package com.cg.proj.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -9,13 +12,25 @@ import javax.persistence.Table;
  *
  */
 @Entity
-@Table(name = "Vehicle")
+@Table(name = "vehicle_deatils")
 public class Vehicle {
     @Id
 	private int vehicleId;
 	private String vehicleBrand;
 	private String vehicleModel;
 	private String vehicleRegNo;
+	
+ @ManyToOne
+ @JoinColumn(name="user_id",referencedColumnName = "user_id")
+	private User user;
+	
+	public User getUser() {
+	return user;
+}
+
+public void setUser(User user) {
+	this.user = user;
+}
 
 	public int getVehicleId() {
 		return vehicleId;

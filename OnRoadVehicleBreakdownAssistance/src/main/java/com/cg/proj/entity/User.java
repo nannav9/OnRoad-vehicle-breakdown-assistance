@@ -1,19 +1,20 @@
 package com.cg.proj.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "User")
+@Table(name = "vehicle_user")
 public class User {
     @Id
-	int userId;
-	String username;
-	String password;
-	int userMobileNumber;
-	String userVehicle;
-	String userRole;
+    @Column(name="user_id")
+	private int userId;
+	private String username;
+	private String password;
+	private int userMobileNumber;
+	private String userRole;
 
 	public int getUserId() {
 		return userId;
@@ -47,14 +48,6 @@ public class User {
 		this.userMobileNumber = userMobileNumber;
 	}
 
-	public String getUserVehicle() {
-		return userVehicle;
-	}
-
-	public void setUserVehicle(String userVehicle) {
-		this.userVehicle = userVehicle;
-	}
-
 	public String getUserRole() {
 		return userRole;
 	}
@@ -70,7 +63,6 @@ public class User {
 		this.username = username;
 		this.password = password;
 		this.userMobileNumber = userMobileNumber;
-		this.userVehicle = userVehicle;
 		this.userRole = userRole;
 	}
 
@@ -82,7 +74,7 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [userId=" + userId + ", username=" + username + ", password=" + password + ", userMobileNumber="
-				+ userMobileNumber + ", userVehicle=" + userVehicle + ",userRole=" + userRole + "]";
+				+ userMobileNumber + ",userRole=" + userRole + "]";
 	}
 
 }
