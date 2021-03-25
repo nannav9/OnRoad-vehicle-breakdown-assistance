@@ -8,7 +8,7 @@ public class Mechanic {
     @Id
     @Column(name="mechanic_id")
 	private int mechanicId;
-	private int mechanicMobileNumber;
+	private long mechanicMobileNumber;
 	private String mechanicName;
 	private String mechanicPassword;
 	private String mechanicLocation;
@@ -21,7 +21,7 @@ public class Mechanic {
 		this.mechanicId = mechanicId;
 	}
 
-	public int getMechanicMobileNumber() {
+	public long getMechanicMobileNumber() {
 		return mechanicMobileNumber;
 	}
 

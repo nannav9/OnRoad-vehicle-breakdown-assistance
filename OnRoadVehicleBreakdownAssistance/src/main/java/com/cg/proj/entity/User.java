@@ -13,7 +13,7 @@ public class User {
 	private int userId;
 	private String username;
 	private String password;
-	private int userMobileNumber;
+	private long userMobileNumber;
 	private String userRole;
 
 	public int getUserId() {
@@ -40,7 +40,7 @@ public class User {
 		this.password = password;
 	}
 
-	public int getUserMobileNumber() {
+	public long getUserMobileNumber() {
 		return userMobileNumber;
 	}
 
