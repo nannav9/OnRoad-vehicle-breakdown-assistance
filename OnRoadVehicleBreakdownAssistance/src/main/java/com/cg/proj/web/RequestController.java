@@ -25,9 +25,14 @@ private RequestService requestService;
 		return requestService.searchMechanic(userLocation);
 		
 	}
-//	@GetMapping("viewrequestbyid/{requestId}")
-//	public Optional<Request> viewRequest(@PathVariable("requestId") int requestId) throws RequestNotFoundException
-//	{
-//		return requestService.viewRequest(requestId);
-//	}
+	@GetMapping("viewrequestbyid/{requestId}")
+	public Optional<Request> viewRequest(@PathVariable("requestId") int requestId) throws RequestNotFoundException
+	{
+		return requestService.viewRequest(requestId);
+	}
+	@GetMapping("viewallrequests")
+	public  List<Request> viewAllRequest() 
+	{
+		return requestService.viewAllRequest();
+	}
 }

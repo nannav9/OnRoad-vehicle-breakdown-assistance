@@ -12,16 +12,15 @@ import com.cg.proj.exceptions.RequestNotFoundException;
 
 @RestControllerAdvice
 public class VehicleRequestAdvice {
-@ExceptionHandler(MechanicNotFoundException.class)
-@ResponseStatus(code=HttpStatus.NOT_FOUND)
-	public ErrorMessageDTO handlesMechanicNotFound(MechanicNotFoundException exception)
-	{
-	return new ErrorMessageDTO(exception.getMessage(),HttpStatus.NOT_FOUND.toString());
+	@ExceptionHandler(MechanicNotFoundException.class)
+	@ResponseStatus(code = HttpStatus.NOT_FOUND)
+	public ErrorMessageDTO handlesMechanicNotFound(MechanicNotFoundException exception) {
+		return new ErrorMessageDTO(exception.getMessage(), HttpStatus.NOT_FOUND.toString());
 	}
-@ExceptionHandler(RequestNotFoundException.class)
-@ResponseStatus(code=HttpStatus.NOT_FOUND)
-public ErrorMessageDTO handlesRequestNotFound(RequestNotFoundException exception)
-{
-	return new ErrorMessageDTO(exception.getMessage(),HttpStatus.NOT_FOUND.toString());
-}
+
+	@ExceptionHandler(RequestNotFoundException.class)
+	@ResponseStatus(code = HttpStatus.NOT_FOUND)
+	public ErrorMessageDTO handlesRequestNotFound(RequestNotFoundException exception) {
+		return new ErrorMessageDTO(exception.getMessage(), HttpStatus.NOT_FOUND.toString());
+	}
 }

@@ -21,24 +21,29 @@ import com.cg.proj.util.VehicleConstants;
 public class RequestServiceImpl implements RequestService {
 	@Autowired
 	private MechanicDAO mechanicDAO;
-	
+	@Autowired
 	private RequestDAO requestDAO;
 	
 //	@Override
 //	public Request sendRequest(User user) {
-//		return requestDAO.save(user);
-//	}
-//
-//	@Override
-//	public Optional<Request> viewRequest(int requestId) throws RequestNotFoundException {
+//		Request request= new Request();
+//		request.s
 //	}
 
-//	@Override
-//	public List<Request> viewAllRequest() {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//
+	@Override
+	public Optional<Request> viewRequest(int requestId) throws RequestNotFoundException {
+		if(requestDAO.findById(requestId).isEmpty())
+		{
+			throw new RequestNotFoundException(VehicleConstants.REQUEST_NOT_AVAILABLE);
+		}
+		return requestDAO.findById(requestId);
+	}
+
+	@Override
+	public List<Request> viewAllRequest() {
+	return requestDAO.findAll();
+	}
+
 //	@Override
 //	public String requestStatusUpdate(int requestId) {
 //		// TODO Auto-generated method stub

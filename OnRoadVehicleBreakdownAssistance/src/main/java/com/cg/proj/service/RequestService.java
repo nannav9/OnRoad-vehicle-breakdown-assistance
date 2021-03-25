@@ -10,10 +10,14 @@ import com.cg.proj.exceptions.MechanicNotFoundException;
 import com.cg.proj.exceptions.RequestNotFoundException;
 
 public interface RequestService {
+
 	//Request sendRequest(User user);
 
-//	Optional<Request> viewRequest(int requestId) throws RequestNotFoundException;
-//	List <Request> viewAllRequest();
+	Optional<Request> viewRequest(int requestId) throws RequestNotFoundException;
+
+	List<Request> viewAllRequest();
+
 //	String requestStatusUpdate(int requestId);
+	
 	List<Mechanic> searchMechanic(String userLocation) throws MechanicNotFoundException;
 }
