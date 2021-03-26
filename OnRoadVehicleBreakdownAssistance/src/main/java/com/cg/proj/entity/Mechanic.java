@@ -5,8 +5,8 @@ import javax.persistence.*;
 @Entity
 @Table(name = "vehicle_mechanic")
 public class Mechanic {
-    @Id
-    @Column(name="mechanic_id")
+	@Id
+	@Column(name = "mechanic_id")
 	private int mechanicId;
 	private long mechanicMobileNumber;
 	private String mechanicName;

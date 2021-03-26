@@ -10,9 +10,8 @@ import org.springframework.stereotype.Repository;
 import com.cg.proj.entity.Mechanic;
 
 @Repository
-public interface MechanicDAO extends JpaRepository<Mechanic,Integer>{
+public interface MechanicDAO extends JpaRepository<Mechanic, Integer> {
 	@Query("from Mechanic where mechanicLocation=:mloc")
 	public List<Mechanic> getMechanics(@Param("mloc") String location);
-	
 
 }

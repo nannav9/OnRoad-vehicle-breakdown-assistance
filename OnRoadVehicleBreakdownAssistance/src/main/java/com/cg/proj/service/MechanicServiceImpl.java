@@ -1,5 +1,5 @@
 package com.cg.proj.service;
 
-public class MechanicServiceImpl implements MechanicService{
+public class MechanicServiceImpl implements MechanicService {
 
 }

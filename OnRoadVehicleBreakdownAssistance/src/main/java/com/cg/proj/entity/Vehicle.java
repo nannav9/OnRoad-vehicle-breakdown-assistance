@@ -14,23 +14,23 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "vehicle_deatils")
 public class Vehicle {
-    @Id
+	@Id
 	private int vehicleId;
 	private String vehicleBrand;
 	private String vehicleModel;
 	private String vehicleRegNo;
-	
- @ManyToOne
- @JoinColumn(name="user_id",referencedColumnName = "user_id")
-	private User user;
-	
-	public User getUser() {
-	return user;
-}
 
-public void setUser(User user) {
-	this.user = user;
-}
+	@ManyToOne
+	@JoinColumn(name = "user_id", referencedColumnName = "user_id")
+	private User user;
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
 
 	public int getVehicleId() {
 		return vehicleId;

@@ -8,8 +8,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "vehicle_user")
 public class User {
-    @Id
-    @Column(name="user_id")
+	@Id
+	@Column(name = "user_id")
 	private int userId;
 	private String username;
 	private String password;

@@ -5,8 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.cg.proj.entity.Request;
 
-
 @Repository
-public interface RequestDAO extends JpaRepository<Request,Integer> {
+public interface RequestDAO extends JpaRepository<Request, Integer> {
 
 }

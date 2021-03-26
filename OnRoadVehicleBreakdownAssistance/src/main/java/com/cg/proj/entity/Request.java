@@ -13,17 +13,26 @@ import javax.persistence.Table;
 @Table(name = "Vehicle_request")
 public class Request {
 	@Id
-	@Column(name="request_id")
+	@Column(name = "request_id")
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int requestId;
 	@ManyToOne
-	@JoinColumn(name="user_id",referencedColumnName = "user_id")
+	@JoinColumn(name = "user_id", referencedColumnName = "user_id")
 	private User user;
 	@ManyToOne
-	@JoinColumn(name="mechanic_id",referencedColumnName = "mechanic_id")
+	@JoinColumn(name = "mechanic_id", referencedColumnName = "mechanic_id")
 	private Mechanic mech;
 	private String userLocation;
 	private String requestStatus;
+	private String requestDescription;
+
+	public String getRequestDescription() {
+		return requestDescription;
+	}
+
+	public void setRequestDescription(String requestDescription) {
+		this.requestDescription = requestDescription;
+	}
 
 	public int getRequestId() {
 		return requestId;

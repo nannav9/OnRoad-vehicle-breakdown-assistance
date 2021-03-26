@@ -1,7 +1,6 @@
 package com.cg.proj.exceptions;
 
-
-public class MechanicNotFoundException extends Exception{
+public class MechanicNotFoundException extends Exception {
 
 	public MechanicNotFoundException() {
 		super();
@@ -28,7 +27,5 @@ public class MechanicNotFoundException extends Exception{
 		super(cause);
 		// TODO Auto-generated constructor stub
 	}
-	
-	
 
 }

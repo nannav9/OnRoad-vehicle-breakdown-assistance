@@ -1,6 +1,6 @@
 package com.cg.proj.exceptions;
 
-public class RequestNotFoundException extends Exception{
+public class RequestNotFoundException extends Exception {
 	public RequestNotFoundException() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -26,5 +26,5 @@ public class RequestNotFoundException extends Exception{
 		super(cause);
 		// TODO Auto-generated constructor stub
 	}
-	
+
 }
