@@ -14,7 +14,7 @@ import com.cg.proj.util.VehicleConstants;
 
 @Service
 @Transactional
-public class FeedbackServiceImpl implements FeedbackService{
+public class FeedbackServiceImpl implements FeedbackService {
 	@Autowired
 	private FeedbackDAO feedbackDAO;
 
@@ -28,13 +28,12 @@ public class FeedbackServiceImpl implements FeedbackService{
 	public List<Feedback> getAllFeedback() {
 		// TODO Auto-generated method stub
 		return feedbackDAO.findAll();
-		
+
 	}
 
 	@Override
-	public Optional<Feedback> getFeedback(int feedbackId) throws FeedbackNotFoundException{
-		if(feedbackDAO.findById(feedbackId).isEmpty())
-		{
+	public Feedback getFeedback(int feedbackId) throws FeedbackNotFoundException {
+		if (feedbackDAO.findById(feedbackId).isEmpty()) {
 			throw new FeedbackNotFoundException(VehicleConstants.FEEDBACK_NOT_AVAILABLE);
 		}
 		return feedbackDAO.findById(feedbackId);
