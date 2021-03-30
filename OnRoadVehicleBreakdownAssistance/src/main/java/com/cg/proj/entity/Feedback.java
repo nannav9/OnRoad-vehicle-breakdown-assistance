@@ -25,7 +25,7 @@ public class Feedback {
 	@ManyToOne
 	@JoinColumn(name = "mechanic_id", referencedColumnName = "mechanic_id")
 	private Mechanic mechanic;
-	
+
 	public int getFeedbackId() {
 		return feedbackId;
 	}

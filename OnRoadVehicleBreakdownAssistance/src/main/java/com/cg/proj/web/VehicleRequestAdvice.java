@@ -15,7 +15,6 @@ import com.cg.proj.exceptions.RequestNotFoundException;
 import com.cg.proj.exceptions.UserNotFoundException;
 import com.cg.proj.exceptions.ValidateException;
 
-
 @RestControllerAdvice
 public class VehicleRequestAdvice {
 	@ExceptionHandler(MechanicNotFoundException.class)
@@ -29,17 +28,19 @@ public class VehicleRequestAdvice {
 	public ErrorMessageDTO handlesRequestNotFound(RequestNotFoundException exception) {
 		return new ErrorMessageDTO(exception.getMessage(), HttpStatus.NOT_FOUND.toString());
 	}
+
 	@ExceptionHandler(UserNotFoundException.class)
 	@ResponseStatus(code = HttpStatus.NOT_FOUND)
 	public ErrorMessageDTO handlesUserNotFound(UserNotFoundException exception) {
 		return new ErrorMessageDTO(exception.getMessage(), HttpStatus.NOT_FOUND.toString());
 	}
+
 	@ExceptionHandler(ValidateException.class)
 	@ResponseStatus(HttpStatus.FORBIDDEN)
-	public ErrorMessageDTO handleValidateException(ValidateException exception)
-	{
-		List<String> lstmesagges=exception.getLserror().stream().map(m->m.getDefaultMessage().toString()).collect(Collectors.toList());
+	public ErrorMessageDTO handleValidateException(ValidateException exception) {
+		List<String> lstmesagges = exception.getLserror().stream().map(m -> m.getDefaultMessage().toString())
+				.collect(Collectors.toList());
 		return new ErrorMessageDTO(lstmesagges);
 	}
-	
+
 }

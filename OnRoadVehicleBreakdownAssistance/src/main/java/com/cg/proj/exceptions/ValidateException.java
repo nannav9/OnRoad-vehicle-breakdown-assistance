@@ -5,9 +5,10 @@ import java.util.List;
 
 import org.springframework.validation.FieldError;
 
-public class ValidateException extends Exception{
+public class ValidateException extends Exception {
 
-	List<FieldError> lserror=new ArrayList<>();
+	List<FieldError> lserror = new ArrayList<>();
+
 	public ValidateException() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -45,9 +46,5 @@ public class ValidateException extends Exception{
 	public void setLserror(List<FieldError> lserror) {
 		this.lserror = lserror;
 	}
-	
-	
-	
-	
 
 }

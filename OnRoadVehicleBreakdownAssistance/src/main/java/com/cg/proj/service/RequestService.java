@@ -13,13 +13,13 @@ import com.cg.proj.exceptions.UserNotFoundException;
 
 public interface RequestService {
 
-	 Request sendRequest(RequestDTO requestdto)throws UserNotFoundException,MechanicNotFoundException;
+	Request sendRequest(RequestDTO requestdto) throws UserNotFoundException, MechanicNotFoundException;
 
 	Request viewRequest(int requestId) throws RequestNotFoundException;
 
 	List<Request> viewAllRequest();
 
-	String requestStatusUpdate(int requestId,String requestStatus)throws RequestNotFoundException;
+	String requestStatusUpdate(int requestId, String requestStatus) throws RequestNotFoundException;
 
 	List<Mechanic> searchMechanic(String userLocation) throws MechanicNotFoundException;
 }

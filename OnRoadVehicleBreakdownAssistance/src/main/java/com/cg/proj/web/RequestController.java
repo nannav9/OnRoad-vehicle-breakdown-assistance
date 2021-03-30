@@ -24,7 +24,6 @@ import com.cg.proj.exceptions.ValidateException;
 import com.cg.proj.service.RequestService;
 import com.cg.proj.util.VehicleConstants;
 
-
 @RestController
 public class RequestController {
 	@Autowired
@@ -46,14 +45,14 @@ public class RequestController {
 	public List<Request> viewAllRequest() {
 		return requestService.viewAllRequest();
 	}
-	
+
 	@PostMapping("addrequest")
-	public SuccessMessageDTO sendRequest(@Valid @RequestBody RequestDTO requesrdto, BindingResult br) throws ValidateException, UserNotFoundException, MechanicNotFoundException
-	{
-		if(br.hasErrors()) 
+	public SuccessMessageDTO sendRequest(@Valid @RequestBody RequestDTO requesrdto, BindingResult br)
+			throws ValidateException, UserNotFoundException, MechanicNotFoundException {
+		if (br.hasErrors())
 			throw new ValidateException(br.getFieldErrors());
-		Request rs=requestService.sendRequest(requesrdto);
-		return new SuccessMessageDTO(VehicleConstants.REQ_SENT+ rs.getRequestId());
+		Request rs = requestService.sendRequest(requesrdto);
+		return new SuccessMessageDTO(VehicleConstants.REQ_SENT + rs.getRequestId());
 	}
 
 }

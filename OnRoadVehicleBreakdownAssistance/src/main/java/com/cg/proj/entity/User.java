@@ -44,7 +44,7 @@ public class User {
 		return userMobileNumber;
 	}
 
-	public void setUserMobileNumber(int userMobileNumber) {
+	public void setUserMobileNumber(long userMobileNumber) {
 		this.userMobileNumber = userMobileNumber;
 	}
 

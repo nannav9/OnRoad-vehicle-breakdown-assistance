@@ -10,33 +10,35 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-
+import com.cg.proj.DTO.FeedbackDTO;
 import com.cg.proj.entity.Feedback;
 
 import com.cg.proj.exceptions.FeedbackNotFoundException;
-
+import com.cg.proj.exceptions.MechanicNotFoundException;
+import com.cg.proj.exceptions.UserNotFoundException;
 import com.cg.proj.service.FeedbackService;
 
 @RestController
 public class FeedbackController {
 	@Autowired
-private FeedbackService feedbackService;
-	
+	private FeedbackService feedbackService;
+
 	@PostMapping("addFeedback")
-	public Feedback addFeedback(@RequestBody Feedback feedback)
-		{
+	public Feedback addFeedback(@RequestBody FeedbackDTO feedback)
+			throws UserNotFoundException, MechanicNotFoundException {
 		return feedbackService.addFeedback(feedback);
-			
-		}
-	@GetMapping("viewfeedback/{feedbackId}")
-	public Optional<Feedback> getFeedback(@PathVariable("feedbackId") int feedbackId) throws FeedbackNotFoundException
-	{
-		return feedbackService.getFeedback(feedbackId);
-		
+
 	}
-	@GetMapping("viewallfeedbacks")
-	public  List<Feedback> viewAllFeedback() 
-	{
-		return feedbackService.getAllFeedback();
+
+	@GetMapping("viewfeedback/{feedbackId}")
+	public Feedback getFeedback(@PathVariable("feedbackId") int feedbackId) throws FeedbackNotFoundException {
+		return feedbackService.getFeedback(feedbackId);
+
+	}
+
+	@GetMapping("viewallfeedbacks/{mechanicId}")
+	public List<Feedback> viewAllFeedback(@PathVariable("mechanicId") int mechanicId)
+			throws MechanicNotFoundException, FeedbackNotFoundException {
+		return feedbackService.getAllFeedback(mechanicId);
 	}
 }

@@ -31,31 +31,28 @@ public class RequestServiceImpl implements RequestService {
 
 	@Override
 	public Request sendRequest(RequestDTO requestdto) throws MechanicNotFoundException, UserNotFoundException {
-		
-	Optional <User> optuser=userDAO.findById(requestdto.getUserId());
-	if(optuser.isEmpty())
-	{
-		throw new UserNotFoundException(VehicleConstants.USER_NOT_AVAILABLE);
-	}
-	Optional<Mechanic> optmechanic=mechanicDAO.findById(requestdto.getMechanicId());
-	if(optmechanic.isEmpty())
-	{
-		throw new MechanicNotFoundException(VehicleConstants.MECHANIC_EMPTY);
-	}
-	Request request=new Request();
-	request.setMech(optmechanic.get());
-	request.setUser(optuser.get());
-	request.setRequestDescription(requestdto.getRequestDescription());
-	request.setUserLocation(requestdto.getUserLocation());
-	request.setRequestStatus(VehicleConstants.REQ_NEW);
+
+		Optional<User> optuser = userDAO.findById(requestdto.getUserId());
+		if (optuser.isEmpty()) {
+			throw new UserNotFoundException(VehicleConstants.USER_NOT_AVAILABLE);
+		}
+		Optional<Mechanic> optmechanic = mechanicDAO.findById(requestdto.getMechanicId());
+		if (optmechanic.isEmpty()) {
+			throw new MechanicNotFoundException(VehicleConstants.MECHANIC_EMPTY);
+		}
+		Request request = new Request();
+		request.setMech(optmechanic.get());
+		request.setUser(optuser.get());
+		request.setRequestDescription(requestdto.getRequestDescription());
+		request.setUserLocation(requestdto.getUserLocation());
+		request.setRequestStatus(VehicleConstants.REQ_NEW);
 		return requestDAO.save(request);
 	}
 
 	@Override
 	public Request viewRequest(int requestId) throws RequestNotFoundException {
-		Optional<Request> optreq=requestDAO.findById(requestId);
-		if(optreq.isEmpty())
-		{
+		Optional<Request> optreq = requestDAO.findById(requestId);
+		if (optreq.isEmpty()) {
 			throw new RequestNotFoundException(VehicleConstants.REQUEST_NOT_AVAILABLE);
 		}
 		return optreq.get();
@@ -67,13 +64,12 @@ public class RequestServiceImpl implements RequestService {
 	}
 
 	@Override
-	public String requestStatusUpdate(int requestId,String requestStatus)throws RequestNotFoundException {
-	Optional<Request> optreq=requestDAO.findById(requestId);
-		if(optreq.isEmpty())
-		{
+	public String requestStatusUpdate(int requestId, String requestStatus) throws RequestNotFoundException {
+		Optional<Request> optreq = requestDAO.findById(requestId);
+		if (optreq.isEmpty()) {
 			throw new RequestNotFoundException(VehicleConstants.REQUEST_NOT_AVAILABLE);
 		}
-		Request req=optreq.get();
+		Request req = optreq.get();
 		req.setRequestStatus(requestStatus);
 		return VehicleConstants.REQ_STATUS_UPDATED;
 	}

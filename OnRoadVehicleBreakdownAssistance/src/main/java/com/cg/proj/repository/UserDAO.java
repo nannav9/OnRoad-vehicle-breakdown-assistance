@@ -6,7 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.cg.proj.entity.User;
 
 @Repository
-public interface UserDAO extends JpaRepository<User,Integer>  {
-	
+public interface UserDAO extends JpaRepository<User, Integer> {
 
 }
