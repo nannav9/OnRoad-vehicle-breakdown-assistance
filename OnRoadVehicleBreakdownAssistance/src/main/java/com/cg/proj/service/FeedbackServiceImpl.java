@@ -59,7 +59,7 @@ public class FeedbackServiceImpl implements FeedbackService {
 
 	@Override
 	public List<Feedback> getAllFeedback(int mechanicId) throws MechanicNotFoundException, FeedbackNotFoundException {
-		// TODO Auto-generated method stub
+
 		Optional<Mechanic> optmechanic = mechanicDAO.findById(mechanicId);
 		if (optmechanic.isEmpty()) {
 			throw new MechanicNotFoundException(VehicleConstants.MECHANIC_EMPTY);

@@ -1,12 +1,12 @@
 package com.cg.proj.service;
 
 import java.util.List;
-import java.util.Optional;
+
 
 import com.cg.proj.DTO.RequestDTO;
 import com.cg.proj.entity.Mechanic;
 import com.cg.proj.entity.Request;
-import com.cg.proj.entity.User;
+
 import com.cg.proj.exceptions.MechanicNotFoundException;
 import com.cg.proj.exceptions.RequestNotFoundException;
 import com.cg.proj.exceptions.UserNotFoundException;

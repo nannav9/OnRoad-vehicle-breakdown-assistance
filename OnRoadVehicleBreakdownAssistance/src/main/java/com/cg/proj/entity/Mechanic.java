@@ -55,7 +55,7 @@ public class Mechanic {
 
 	public Mechanic() {
 		super();
-		// TODO Auto-generated constructor stub
+
 	}
 
 	public Mechanic(int mechanicId, String mechanicMobileNumber, String mechanicName, String mechanicPassword,

@@ -56,7 +56,7 @@ public class User {
 		this.userRole = userRole;
 	}
 
-	public User(int userId, String username, String password, int userMobileNumber, String userVehicle,
+	public User(int userId, String username, String password, int userMobileNumber,
 			String userRole) {
 		super();
 		this.userId = userId;
@@ -68,7 +68,7 @@ public class User {
 
 	public User() {
 		super();
-		// TODO Auto-generated constructor stub
+
 	}
 
 	@Override
