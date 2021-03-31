@@ -51,12 +51,12 @@ public class OnRoadVehicleBreakdownAssistanceApplicationTests {
 	@Test
 	public void testRequestStatusById_03() throws RequestNotFoundException {
 
-		assertEquals("Request Status not updated", requestservice.requestStatusUpdate(3, "request"));
+		assertEquals("Request Status updated", requestservice.requestStatusUpdate(3, "request"));
 	}
 
 	@Test
 	public void testSearchMechanicByLocation() throws MechanicNotFoundException {
-		assertThrows(MechanicNotFoundException.class, () -> requestservice.searchMechanic("ramapuram"));
+		assertThrows(MechanicNotFoundException.class, () -> requestservice.searchMechanic("saligramam"));
 
 	}
 

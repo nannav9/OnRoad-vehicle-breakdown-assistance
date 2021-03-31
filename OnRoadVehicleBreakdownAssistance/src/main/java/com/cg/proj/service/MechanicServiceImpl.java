@@ -23,9 +23,9 @@ public class MechanicServiceImpl implements MechanicService {
 	@Override
 	public Mechanic addMechanic(MechanicDTO mechanicdto) {
 		Mechanic mechanic = new Mechanic();
-		mechanic.setMechanicName(mechanicdto.getMechanicname());
+		mechanic.setMechanicName(mechanicdto.getMechanicName());
 		mechanic.setMechanicId(mechanicdto.getMechanicId());
-		mechanic.setMechanicPassword(mechanicdto.getPassword());
+		mechanic.setMechanicPassword(mechanicdto.getMechanicPassword());
 		mechanic.setMechanicMobileNumber(mechanicdto.getMechanicMobileNumber());
 		mechanic.setMechanicLocation(mechanicdto.getMechanicLocation());
 		return mechanicDAO.save(mechanic);

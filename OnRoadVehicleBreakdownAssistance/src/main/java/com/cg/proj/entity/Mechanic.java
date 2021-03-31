@@ -8,7 +8,7 @@ public class Mechanic {
 	@Id
 	@Column(name = "mechanic_id")
 	private int mechanicId;
-	private long mechanicMobileNumber;
+	private String mechanicMobileNumber;
 	private String mechanicName;
 	private String mechanicPassword;
 	private String mechanicLocation;
@@ -21,12 +21,12 @@ public class Mechanic {
 		this.mechanicId = mechanicId;
 	}
 
-	public long getMechanicMobileNumber() {
+	public String getMechanicMobileNumber() {
 		return mechanicMobileNumber;
 	}
 
-	public void setMechanicMobileNumber(long l) {
-		this.mechanicMobileNumber = l;
+	public void setMechanicMobileNumber(String mechanicMobileNumber ) {
+		this.mechanicMobileNumber = mechanicMobileNumber;
 	}
 
 	public String getMechanicName() {
@@ -58,7 +58,7 @@ public class Mechanic {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Mechanic(int mechanicId, int mechanicMobileNumber, String mechanicName, String mechanicPassword,
+	public Mechanic(int mechanicId, String mechanicMobileNumber, String mechanicName, String mechanicPassword,
 			String mechanicLocation) {
 		super();
 		this.mechanicId = mechanicId;

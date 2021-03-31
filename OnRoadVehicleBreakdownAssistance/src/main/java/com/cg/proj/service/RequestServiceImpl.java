@@ -38,7 +38,7 @@ public class RequestServiceImpl implements RequestService {
 		}
 		Optional<Mechanic> optmechanic = mechanicDAO.findById(requestdto.getMechanicId());
 		if (optmechanic.isEmpty()) {
-			throw new MechanicNotFoundException(VehicleConstants.MECHANIC_EMPTY);
+			throw new MechanicNotFoundException(VehicleConstants.MECHANICID_NOT_AVAILABLE);
 		}
 		Request request = new Request();
 		request.setMech(optmechanic.get());

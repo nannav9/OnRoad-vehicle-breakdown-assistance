@@ -8,12 +8,9 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-/**
- * @author Shivam Mishra
- *
- */
+
 @Entity
-@Table(name = "vehicle_deatils")
+@Table(name = "vehicle_details")
 public class Vehicle {
    @GeneratedValue
 	@Id

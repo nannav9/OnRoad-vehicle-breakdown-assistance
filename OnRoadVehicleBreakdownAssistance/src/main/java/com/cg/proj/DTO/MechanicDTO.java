@@ -7,11 +7,11 @@ public class MechanicDTO {
 	@Min(value = 3, message = "Mechanic ID must be minimum 3")
 	private int mechanicId;
 	@Size(min = 3, message = "Mechanic name must be minimum 3")
-	private String mechanicname;
+	private String mechanicName;
 	@Size(min = 3, message = "Password must be minimum 3")
-	private String password;
-	@Min(value = 9, message = "Mechanic Mobile Number must be minimum 9")
-	private long mechanicMobileNumber;
+	private String mechanicPassword;
+	@Size(min = 10, message = "Mechanic Mobile Number must be minimum 10")
+	private String mechanicMobileNumber;
 	@Size(min = 3, message = "Mechanic Location must be minimum 3")
 	private String mechanicLocation;
 
@@ -23,27 +23,27 @@ public class MechanicDTO {
 		this.mechanicId = mechanicId;
 	}
 
-	public String getMechanicname() {
-		return mechanicname;
+	public String getMechanicName() {
+		return mechanicName;
 	}
 
-	public void setMechanicname(String mechanicname) {
-		this.mechanicname = mechanicname;
+	public void setMechanicName(String mechanicName) {
+		this.mechanicName = mechanicName;
 	}
 
-	public String getPassword() {
-		return password;
+	public String getMechanicPassword() {
+		return mechanicPassword;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setMechanicPassword(String mechanicPassword) {
+		this.mechanicPassword = mechanicPassword;
 	}
 
-	public long getMechanicMobileNumber() {
+	public String getMechanicMobileNumber() {
 		return mechanicMobileNumber;
 	}
 
-	public void setMechanicMobileNumber(long mechanicMobileNumber) {
+	public void setMechanicMobileNumber(String mechanicMobileNumber) {
 		this.mechanicMobileNumber = mechanicMobileNumber;
 	}
 
