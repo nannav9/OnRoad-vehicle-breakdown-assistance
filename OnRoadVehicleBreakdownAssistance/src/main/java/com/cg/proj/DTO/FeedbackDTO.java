@@ -1,9 +1,15 @@
 package com.cg.proj.DTO;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Size;
+
 public class FeedbackDTO {
 	private int rating;
+	@Size(min = 3, message = "Feedback must have minimum 3 characters")
 	private String feedback;
+	@Min(value = 3, message = "User ID must be minimum 1")
 	private int userId;
+	@Min(value = 3, message = "Mechanic ID mut be minimum 1")
 	private int mechanicId;
 
 	public int getRating() {

@@ -1,6 +1,7 @@
 package com.cg.proj.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
@@ -14,29 +15,21 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "vehicle_deatils")
 public class Vehicle {
+   @GeneratedValue
 	@Id
-	private int vehicleId;
+	private Integer vehicleId;
 	private String vehicleBrand;
 	private String vehicleModel;
 	private String vehicleRegNo;
+	
+ 
+	
 
-	@ManyToOne
-	@JoinColumn(name = "user_id", referencedColumnName = "user_id")
-	private User user;
-
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
-
-	public int getVehicleId() {
+	public Integer getVehicleId() {
 		return vehicleId;
 	}
 
-	public void setVehicleId(int vehicleId) {
+	public void setVehicleId(Integer vehicleId) {
 		this.vehicleId = vehicleId;
 	}
 
@@ -64,7 +57,7 @@ public class Vehicle {
 		this.vehicleRegNo = vehicleRegNo;
 	}
 
-	public Vehicle(int vehicleId, String vehicleBrand, String vehicleModel, String vehicleRegNo) {
+	public Vehicle(Integer vehicleId, String vehicleBrand, String vehicleModel, String vehicleRegNo) {
 		super();
 		this.vehicleId = vehicleId;
 		this.vehicleBrand = vehicleBrand;

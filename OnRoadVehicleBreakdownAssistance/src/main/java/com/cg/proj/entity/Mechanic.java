@@ -25,8 +25,8 @@ public class Mechanic {
 		return mechanicMobileNumber;
 	}
 
-	public void setMechanicMobileNumber(int mechanicMobileNumber) {
-		this.mechanicMobileNumber = mechanicMobileNumber;
+	public void setMechanicMobileNumber(long l) {
+		this.mechanicMobileNumber = l;
 	}
 
 	public String getMechanicName() {

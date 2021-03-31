@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cg.proj.DTO.FeedbackDTO;
@@ -19,24 +20,25 @@ import com.cg.proj.exceptions.UserNotFoundException;
 import com.cg.proj.service.FeedbackService;
 
 @RestController
+@RequestMapping("/feedback")
 public class FeedbackController {
 	@Autowired
 	private FeedbackService feedbackService;
 
-	@PostMapping("addFeedback")
+	@PostMapping("/addFeedback")
 	public Feedback addFeedback(@RequestBody FeedbackDTO feedback)
 			throws UserNotFoundException, MechanicNotFoundException {
 		return feedbackService.addFeedback(feedback);
 
 	}
 
-	@GetMapping("viewfeedback/{feedbackId}")
+	@GetMapping("/viewfeedback/{feedbackId}")
 	public Feedback getFeedback(@PathVariable("feedbackId") int feedbackId) throws FeedbackNotFoundException {
 		return feedbackService.getFeedback(feedbackId);
 
 	}
 
-	@GetMapping("viewallfeedbacks/{mechanicId}")
+	@GetMapping("/viewallfeedbacks/{mechanicId}")
 	public List<Feedback> viewAllFeedback(@PathVariable("mechanicId") int mechanicId)
 			throws MechanicNotFoundException, FeedbackNotFoundException {
 		return feedbackService.getAllFeedback(mechanicId);
