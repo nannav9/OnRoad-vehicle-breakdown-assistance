@@ -25,7 +25,7 @@ public class Mechanic {
 		return mechanicMobileNumber;
 	}
 
-	public void setMechanicMobileNumber(String mechanicMobileNumber ) {
+	public void setMechanicMobileNumber(String mechanicMobileNumber) {
 		this.mechanicMobileNumber = mechanicMobileNumber;
 	}
 

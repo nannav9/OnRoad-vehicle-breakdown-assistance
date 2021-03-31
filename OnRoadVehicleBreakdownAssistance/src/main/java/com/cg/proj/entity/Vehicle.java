@@ -8,19 +8,15 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-
 @Entity
 @Table(name = "vehicle_details")
 public class Vehicle {
-   @GeneratedValue
+	@GeneratedValue
 	@Id
 	private Integer vehicleId;
 	private String vehicleBrand;
 	private String vehicleModel;
 	private String vehicleRegNo;
-	
- 
-	
 
 	public Integer getVehicleId() {
 		return vehicleId;
