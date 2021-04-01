@@ -2,6 +2,10 @@ package com.cg.proj.entity;
 
 import javax.persistence.*;
 
+/**
+ * @author Bijit Ghosh
+ *
+ */
 @Entity
 @Table(name = "vehicle_mechanic")
 public class Mechanic {

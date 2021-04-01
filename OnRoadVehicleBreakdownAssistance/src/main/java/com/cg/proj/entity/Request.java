@@ -9,6 +9,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+/**
+ * @author SHOBHANA
+ *
+ */
 @Entity
 @Table(name = "Vehicle_request")
 public class Request {

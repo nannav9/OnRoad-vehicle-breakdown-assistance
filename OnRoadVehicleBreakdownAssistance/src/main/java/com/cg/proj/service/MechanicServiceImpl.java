@@ -13,6 +13,10 @@ import com.cg.proj.exceptions.MechanicNotFoundException;
 import com.cg.proj.repository.MechanicDAO;
 import com.cg.proj.util.VehicleConstants;
 
+/**
+ * @author Bijit Ghosh
+ *
+ */
 @Service
 @Transactional
 public class MechanicServiceImpl implements MechanicService {
@@ -20,7 +24,7 @@ public class MechanicServiceImpl implements MechanicService {
 	@Autowired
 	private MechanicDAO mechanicDAO;
 
-	@Override
+	@Override // method to add mechanic
 	public Mechanic addMechanic(MechanicDTO mechanicdto) {
 		Mechanic mechanic = new Mechanic();
 		mechanic.setMechanicName(mechanicdto.getMechanicName());
@@ -32,7 +36,7 @@ public class MechanicServiceImpl implements MechanicService {
 
 	}
 
-	@Override
+	@Override // method to get mechanic
 	public Mechanic getMechanic(int mechanicId) throws MechanicNotFoundException {
 		Optional<Mechanic> optmechanic = mechanicDAO.findById(mechanicId);
 		if (optmechanic.isEmpty()) {
@@ -41,8 +45,12 @@ public class MechanicServiceImpl implements MechanicService {
 		return optmechanic.get();
 	}
 
-	@Override
-	public List<Mechanic> getallMechanic() {
+	@Override // method to list all mechanics
+	public List<Mechanic> getallMechanic() throws MechanicNotFoundException {
+		List<Mechanic> optmechanic = mechanicDAO.findAll();
+		if (optmechanic.isEmpty()) {
+			throw new MechanicNotFoundException(VehicleConstants.MECHANIC_LISTEMPTY);
+		}
 		return mechanicDAO.findAll();
 	}
 }

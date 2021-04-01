@@ -16,7 +16,6 @@ import com.cg.proj.entity.Feedback;
 import com.cg.proj.exceptions.FeedbackNotFoundException;
 import com.cg.proj.repository.FeedbackDAO;
 import com.cg.proj.service.FeedbackServiceImpl;
-
 @SpringBootTest
 public class TestFeedbackService {
 	public static Optional<Feedback> optfeedback;
@@ -28,13 +27,15 @@ public class TestFeedbackService {
 	@BeforeEach
 	public void beforeeach() {
 		optfeedback = Optional.of(new Feedback());
-		Mockito.when(feedbackdao.findById(1)).thenReturn(optfeedback);
+		Mockito.when(feedbackdao.findById(3)).thenReturn(optfeedback);
 		Mockito.when(feedbackdao.findById(100)).thenThrow(FeedbackNotFoundException.class);
+		
+		
 	}
 
 	@Test
 	public void testFeedbackById_01() throws FeedbackNotFoundException {
-		assertNotNull(feedbackservice.getFeedback(1));
+		assertNotNull(feedbackservice.getFeedback(3));
 
 	}
 
@@ -44,4 +45,21 @@ public class TestFeedbackService {
 
 	}
 
+	@Test
+	public void testAddFeedback() throws FeedbackNotFoundException {
+		assertThrows(FeedbackNotFoundException.class, () -> feedbackservice.getFeedback(120));
+
+	}
+
+	@Test
+	public void testgetFeedback() throws FeedbackNotFoundException {
+		assertNotNull(feedbackservice.getFeedback(130));
+
+	}
+
+	@Test
+	public void testgetAllFeedback() throws FeedbackNotFoundException {
+		assertThrows(FeedbackNotFoundException.class, () -> feedbackservice.getFeedback(140));
+
+	}
 }

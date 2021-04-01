@@ -3,6 +3,10 @@ package com.cg.proj.DTO;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 
+/**
+ * @author Bijit Ghosh
+ *
+ */
 public class MechanicDTO {
 	@Min(value = 3, message = "Mechanic ID must be minimum 3")
 	private int mechanicId;
@@ -15,6 +19,7 @@ public class MechanicDTO {
 	@Size(min = 3, message = "Mechanic Location must be minimum 3")
 	private String mechanicLocation;
 
+	// Generating getters and setters
 	public int getMechanicId() {
 		return mechanicId;
 	}

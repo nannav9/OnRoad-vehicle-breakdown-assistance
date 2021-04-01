@@ -9,8 +9,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.cg.proj.DTO.UserDTO;
 import com.cg.proj.entity.User;
+import com.cg.proj.entity.Vehicle;
 import com.cg.proj.exceptions.UserNotFoundException;
+import com.cg.proj.exceptions.VehicleNotFoundException;
 import com.cg.proj.repository.UserDAO;
+import com.cg.proj.repository.VehicleDAO;
 import com.cg.proj.util.VehicleConstants;
 
 @Service
@@ -19,6 +22,8 @@ public class UserServiceImpl implements UserService {
 
 	@Autowired
 	private UserDAO userDAO;
+	@Autowired
+	private VehicleDAO vehicleDAO;
 
 	@Override
 	public User addUser(UserDTO userdto) {
@@ -28,6 +33,10 @@ public class UserServiceImpl implements UserService {
 		user.setPassword(userdto.getPassword());
 		user.setUserMobileNumber(userdto.getUserMobileNumber());
 		user.setUserRole(userdto.getUserRole());
+//		Optional<Vehicle> optvehicle = vehicleDAO.findById(userdto.getVehicleId());
+//		if (optvehicle.isEmpty()) {
+//			throw new VehicleNotFoundException(VehicleConstants.VEHICLE_NOT_AVAILABLE);
+//		}
 		return userDAO.save(user);
 
 	}

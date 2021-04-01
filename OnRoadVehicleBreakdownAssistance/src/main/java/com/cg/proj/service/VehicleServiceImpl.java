@@ -27,6 +27,7 @@ public class VehicleServiceImpl implements VehicleService {
 	// @Override
 	@Transactional
 	public Vehicle updateVehicle(Vehicle vehicle) {
+		validateVehicle(vehicle);
 		Integer id = vehicle.getVehicleId();
 		boolean exists = repository.existsById(id);
 		if (!exists) {
@@ -38,6 +39,7 @@ public class VehicleServiceImpl implements VehicleService {
 	// @Override
 	@Transactional
 	public Vehicle deleteVehicle(Vehicle vehicle) {
+		validateVehicle(vehicle);
 		Integer id = vehicle.getVehicleId();
 		boolean exists = repository.existsById(id);
 		if (!exists) {

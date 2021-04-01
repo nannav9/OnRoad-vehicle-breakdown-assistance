@@ -14,6 +14,8 @@ public class UserDTO {
 	private long userMobileNumber;
 	@Size(min = 4, message = "User ID must be minimum 3")
 	private String userRole;
+//	@Min(value = 3, message = "Vehicle ID must be minimum 3")
+//	private int vehicleId;
 
 	public int getUserId() {
 		return userId;
@@ -54,4 +56,12 @@ public class UserDTO {
 	public void setUserRole(String userRole) {
 		this.userRole = userRole;
 	}
+//
+//	public int getVehicleId() {
+//		return vehicleId;
+//	}
+//
+//	public void setVehicleId(int vehicleId) {
+//		this.vehicleId = vehicleId;
+//	}
 }

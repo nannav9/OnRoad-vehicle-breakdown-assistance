@@ -13,7 +13,6 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import com.cg.proj.entity.Vehicle;
 import com.cg.proj.exceptions.VehicleNotFoundException;
@@ -59,7 +58,9 @@ public class VehicleServiceImplUnitTest {
 	void test_updateVehicle_1() {
 
 		Vehicle vehicle = mock(Vehicle.class);
+		when(vehicle.getVehicleId()).thenReturn(1);
 		doNothing().when(service).validateVehicle(vehicle);
+		Mockito.when(repository.existsById(1)).thenReturn(true);
 		Mockito.when(repository.save(vehicle)).thenReturn(vehicle);
 		Vehicle result = service.updateVehicle(vehicle);
 		Assertions.assertNotNull(result);
@@ -82,10 +83,7 @@ public class VehicleServiceImplUnitTest {
 	void test_getById_3() {
 
 		Integer id = 1;
-		Vehicle vehicle = mock(Vehicle.class);
 
-		doNothing().when(service).validateVehicle(vehicle);
-		;
 		Vehicle fetched = mock(Vehicle.class);
 		Optional<Vehicle> optional = Optional.of(fetched);
 		Mockito.when(repository.findById(id)).thenReturn(optional);
