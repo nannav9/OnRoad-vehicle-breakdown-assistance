@@ -20,6 +20,10 @@ import com.cg.proj.repository.RequestDAO;
 import com.cg.proj.service.RequestService;
 import com.cg.proj.service.RequestServiceImpl;
 
+/**
+ * @author SHOBHANA
+ *
+ */
 @SpringBootTest
 public class OnRoadVehicleBreakdownAssistanceApplicationTests {
 	public static Optional<Request> optrequest;
@@ -36,25 +40,25 @@ public class OnRoadVehicleBreakdownAssistanceApplicationTests {
 
 	}
 
-	@Test
+	@Test//checking not null
 	public void testRequestById_01() throws RequestNotFoundException {
 		assertNotNull(requestservice.viewRequest(3));
 
 	}
 
-	@Test
+	@Test//checking if exception gets thrown for request id
 	public void testRequestById_02() throws RequestNotFoundException {
 		assertThrows(RequestNotFoundException.class, () -> requestservice.viewRequest(100));
 
 	}
 
-	@Test
+	@Test//checking status update
 	public void testRequestStatusById_03() throws RequestNotFoundException {
 
 		assertEquals("Request Status updated", requestservice.requestStatusUpdate(3, "request"));
 	}
 
-	@Test
+	@Test//checking if exception is thrown for mechanic
 	public void testSearchMechanicByLocation() throws MechanicNotFoundException {
 		assertThrows(MechanicNotFoundException.class, () -> requestservice.searchMechanic("saligramam"));
 

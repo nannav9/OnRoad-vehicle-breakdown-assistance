@@ -12,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import com.cg.proj.entity.User;
-import com.cg.proj.exceptions.FeedbackNotFoundException;
 import com.cg.proj.exceptions.UserNotFoundException;
 import com.cg.proj.repository.UserDAO;
 import com.cg.proj.service.UserServiceImpl;

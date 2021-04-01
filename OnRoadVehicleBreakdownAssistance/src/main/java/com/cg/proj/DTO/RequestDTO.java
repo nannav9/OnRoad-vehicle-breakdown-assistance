@@ -12,7 +12,7 @@ public class RequestDTO {
 	private String userLocation;
 	@Size(min = 3, message = "Request Description must have minimum 3 characters")
 	private String requestDescription;
-
+//setters and getters
 	public int getUserId() {
 		return userId;
 	}
