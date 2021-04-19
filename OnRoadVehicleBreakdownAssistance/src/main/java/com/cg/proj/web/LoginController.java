@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cg.proj.DTO.ErrorInfo;
+import com.cg.proj.dto.ErrorInfo;
 import com.cg.proj.entity.Userlogin;
 import com.cg.proj.exceptions.LoginException;
 import com.cg.proj.service.LoginService;

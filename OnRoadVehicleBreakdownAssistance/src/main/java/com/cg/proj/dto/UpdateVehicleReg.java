@@ -1,4 +1,4 @@
-package com.cg.proj.DTO;
+package com.cg.proj.dto;
 
 public class UpdateVehicleReg {
 	private Integer vehicleId;

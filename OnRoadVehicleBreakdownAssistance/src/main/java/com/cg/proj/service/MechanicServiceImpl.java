@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.cg.proj.DTO.MechanicDTO;
+import com.cg.proj.dto.MechanicDTO;
 import com.cg.proj.entity.Mechanic;
 import com.cg.proj.exceptions.MechanicNotFoundException;
 import com.cg.proj.repository.MechanicDAO;

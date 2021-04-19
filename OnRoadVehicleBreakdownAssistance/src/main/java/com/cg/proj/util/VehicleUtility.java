@@ -2,7 +2,7 @@ package com.cg.proj.util;
 
 import org.springframework.stereotype.Component;
 
-import com.cg.proj.DTO.VehicleDetails;
+import com.cg.proj.dto.VehicleDetails;
 import com.cg.proj.entity.Vehicle;
 
 @Component

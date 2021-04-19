@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.cg.proj.DTO.RequestDTO;
+import com.cg.proj.dto.RequestDTO;
 import com.cg.proj.entity.Mechanic;
 import com.cg.proj.entity.Request;
 import com.cg.proj.entity.User;
@@ -21,7 +21,7 @@ import com.cg.proj.util.VehicleConstants;
 
 
 /**
- * @author SHOBHANA
+ * @author SHOBHANA & Navaneeth
  *
  */
 @Service

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cg.proj.DTO.FeedbackDTO;
+import com.cg.proj.dto.FeedbackDTO;
 import com.cg.proj.entity.Feedback;
 
 import com.cg.proj.exceptions.FeedbackNotFoundException;

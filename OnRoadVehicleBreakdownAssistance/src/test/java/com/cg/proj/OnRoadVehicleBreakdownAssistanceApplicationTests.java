@@ -17,15 +17,14 @@ import com.cg.proj.entity.Request;
 import com.cg.proj.exceptions.MechanicNotFoundException;
 import com.cg.proj.exceptions.RequestNotFoundException;
 import com.cg.proj.repository.RequestDAO;
-import com.cg.proj.service.RequestService;
 import com.cg.proj.service.RequestServiceImpl;
 
 /**
- * @author SHOBHANA
+ * @author SHOBHANA & Navaneeth
  *
  */
 @SpringBootTest
-public class OnRoadVehicleBreakdownAssistanceApplicationTests {
+ class OnRoadVehicleBreakdownAssistanceApplicationTests {
 	public static Optional<Request> optrequest;
 	@MockBean
 	private RequestDAO requestdao;
@@ -40,26 +39,30 @@ public class OnRoadVehicleBreakdownAssistanceApplicationTests {
 
 	}
 
-	@Test//checking not null
-	public void testRequestById_01() throws RequestNotFoundException {
+	//checking not null
+	@Test
+	 void testRequestById_01() throws RequestNotFoundException {
 		assertNotNull(requestservice.viewRequest(3));
 
 	}
 
-	@Test//checking if exception gets thrown for request id
-	public void testRequestById_02() throws RequestNotFoundException {
+	//checking if exception gets thrown for request id
+	@Test
+	 void testRequestById_02() throws RequestNotFoundException {
 		assertThrows(RequestNotFoundException.class, () -> requestservice.viewRequest(100));
 
 	}
 
-	@Test//checking status update
-	public void testRequestStatusById_03() throws RequestNotFoundException {
+	//checking status update
+	@Test
+	 void testRequestStatusById_03() throws RequestNotFoundException {
 
 		assertEquals("Request Status updated", requestservice.requestStatusUpdate(3, "request"));
 	}
 
-	@Test//checking if exception is thrown for mechanic
-	public void testSearchMechanicByLocation() throws MechanicNotFoundException {
+	//checking if exception is thrown for mechanic
+	@Test
+	 void testSearchMechanicByLocation() throws MechanicNotFoundException {
 		assertThrows(MechanicNotFoundException.class, () -> requestservice.searchMechanic("saligramam"));
 
 	}

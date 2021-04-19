@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.cg.proj.DTO.UserDTO;
+import com.cg.proj.dto.UserDTO;
 import com.cg.proj.entity.User;
 import com.cg.proj.entity.Vehicle;
 import com.cg.proj.exceptions.UserNotFoundException;

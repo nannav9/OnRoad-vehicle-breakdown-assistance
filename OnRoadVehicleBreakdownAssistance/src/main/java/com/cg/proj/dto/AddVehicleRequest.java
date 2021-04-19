@@ -1,6 +1,6 @@
-package com.cg.proj.DTO;
+package com.cg.proj.dto;
 
-public class VehicleDetails {
+public class AddVehicleRequest {
 
 	private String vehicleBrand;
 	private String vehicleModel;

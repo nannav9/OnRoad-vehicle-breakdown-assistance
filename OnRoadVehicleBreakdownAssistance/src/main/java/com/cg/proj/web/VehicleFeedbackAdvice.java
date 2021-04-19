@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import com.cg.proj.DTO.ErrorMessageDTO;
+import com.cg.proj.dto.ErrorMessageDTO;
 import com.cg.proj.exceptions.FeedbackNotFoundException;
 import com.cg.proj.exceptions.RequestNotFoundException;
 

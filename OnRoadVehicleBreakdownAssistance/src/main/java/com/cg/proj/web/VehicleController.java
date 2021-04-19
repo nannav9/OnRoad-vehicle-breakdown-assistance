@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cg.proj.DTO.AddVehicleRequest;
-import com.cg.proj.DTO.DeleteVehicleRequest;
-import com.cg.proj.DTO.UpdateVehicleReg;
-import com.cg.proj.DTO.VehicleDetails;
+import com.cg.proj.dto.AddVehicleRequest;
+import com.cg.proj.dto.DeleteVehicleRequest;
+import com.cg.proj.dto.UpdateVehicleReg;
+import com.cg.proj.dto.VehicleDetails;
 import com.cg.proj.entity.Vehicle;
 import com.cg.proj.service.VehicleService;
 import com.cg.proj.util.VehicleUtility;

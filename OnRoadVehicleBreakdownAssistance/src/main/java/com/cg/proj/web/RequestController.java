@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cg.proj.DTO.RequestDTO;
-import com.cg.proj.DTO.SuccessMessageDTO;
+import com.cg.proj.dto.RequestDTO;
+import com.cg.proj.dto.SuccessMessageDTO;
 import com.cg.proj.entity.Mechanic;
 import com.cg.proj.entity.Request;
 import com.cg.proj.exceptions.MechanicNotFoundException;
@@ -26,7 +26,7 @@ import com.cg.proj.service.RequestService;
 import com.cg.proj.util.VehicleConstants;
 
 /**
- * @author SHOBHANA
+ * @author SHOBHANA & Navaneeth
  *
  */
 @RestController

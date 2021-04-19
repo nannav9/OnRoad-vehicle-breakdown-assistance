@@ -1,4 +1,4 @@
-package com.cg.proj.DTO;
+package com.cg.proj.dto;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;

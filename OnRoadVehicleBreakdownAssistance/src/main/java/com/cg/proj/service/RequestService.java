@@ -2,8 +2,7 @@ package com.cg.proj.service;
 
 import java.util.List;
 
-
-import com.cg.proj.DTO.RequestDTO;
+import com.cg.proj.dto.RequestDTO;
 import com.cg.proj.entity.Mechanic;
 import com.cg.proj.entity.Request;
 

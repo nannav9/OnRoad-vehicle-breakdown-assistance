@@ -2,7 +2,7 @@ package com.cg.proj.service;
 
 import java.util.List;
 
-import com.cg.proj.DTO.MechanicDTO;
+import com.cg.proj.dto.MechanicDTO;
 import com.cg.proj.entity.Mechanic;
 
 import com.cg.proj.exceptions.MechanicNotFoundException;

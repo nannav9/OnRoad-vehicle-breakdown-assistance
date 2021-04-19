@@ -1,4 +1,4 @@
-package com.cg.proj.DTO;
+package com.cg.proj.dto;
 
 import java.util.List;
 

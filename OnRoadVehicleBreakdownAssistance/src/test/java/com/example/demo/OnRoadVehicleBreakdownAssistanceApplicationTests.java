@@ -18,7 +18,7 @@ import com.cg.proj.repository.RequestDAO;
 import com.cg.proj.service.RequestService;
 import com.cg.proj.service.RequestServiceImpl;
 @SpringBootTest
-public class OnRoadVehicleBreakdownAssistanceApplicationTests {
+ class OnRoadVehicleBreakdownAssistanceApplicationTests {
 	public static Optional<Request> optrequest;
 	@MockBean
 	private RequestDAO requestdao;
@@ -31,13 +31,13 @@ public class OnRoadVehicleBreakdownAssistanceApplicationTests {
 	
 	}
 	@Test
-	public void testRequestById_01() throws RequestNotFoundException
+	 void testRequestById_01() throws RequestNotFoundException
 	{
 		assertNotNull(requestservice.viewRequest(3));
 		
 	}
 	@Test
-	public void testRequestById_02() throws RequestNotFoundException
+	 void testRequestById_02() throws RequestNotFoundException
 	{
 		assertThrows(RequestNotFoundException.class,()->requestservice.viewRequest(100));
 		
