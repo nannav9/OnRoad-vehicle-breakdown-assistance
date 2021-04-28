@@ -4,6 +4,7 @@ import java.util.List;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,7 +19,7 @@ import com.cg.proj.exceptions.FeedbackNotFoundException;
 import com.cg.proj.exceptions.MechanicNotFoundException;
 import com.cg.proj.exceptions.UserNotFoundException;
 import com.cg.proj.service.FeedbackService;
-
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/feedback")
 public class FeedbackController {

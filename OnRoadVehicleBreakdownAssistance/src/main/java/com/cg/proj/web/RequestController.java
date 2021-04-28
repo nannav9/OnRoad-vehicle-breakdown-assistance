@@ -2,11 +2,11 @@ package com.cg.proj.web;
 
 import java.util.List;
 
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -29,11 +29,13 @@ import com.cg.proj.util.VehicleConstants;
  * @author SHOBHANA & Navaneeth
  *
  */
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/request")
 public class RequestController {
 	@Autowired
 	private RequestService requestService;
+
 //to view list of mechanics based on user location
 	@GetMapping("/viewmechanicsbyloc/{userLocation}")
 	public List<Mechanic> getMechanics(@PathVariable("userLocation") String userLocation)
@@ -41,24 +43,31 @@ public class RequestController {
 		return requestService.searchMechanic(userLocation);
 
 	}
+
 //to view request by request id
 	@GetMapping("/viewrequestbyid/{requestId}")
 	public Request viewRequest(@PathVariable("requestId") int requestId) throws RequestNotFoundException {
 		return requestService.viewRequest(requestId);
 	}
+
 //to get all requests
 	@GetMapping("/viewallrequests")
 	public List<Request> viewAllRequest() {
 		return requestService.viewAllRequest();
 	}
+
 //to add new request
 	@PostMapping("/addrequest")
-	public SuccessMessageDTO sendRequest(@Valid @RequestBody RequestDTO requesrdto, BindingResult br)
+	public SuccessMessageDTO sendRequest(@Valid @RequestBody RequestDTO requestdto, BindingResult br)
 			throws ValidateException, UserNotFoundException, MechanicNotFoundException {
 		if (br.hasErrors())
 			throw new ValidateException(br.getFieldErrors());
-		Request rs = requestService.sendRequest(requesrdto);
+		Request rs = requestService.sendRequest(requestdto);
 		return new SuccessMessageDTO(VehicleConstants.REQ_SENT + rs.getRequestId());
 	}
-
+//to update status of the request
+	@PostMapping("/requeststatusupdate/{requestId}")
+	public String requestStatusUpdate(@PathVariable("requestId") int requestId) throws RequestNotFoundException {
+		return requestService.requestStatusUpdate(requestId, VehicleConstants.UPDATED_REQUEST);
+	}
 }

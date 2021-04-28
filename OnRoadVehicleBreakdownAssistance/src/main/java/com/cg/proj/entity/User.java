@@ -11,7 +11,7 @@ public class User {
 	@Id
 	@Column(name = "user_id")
 	private int userId;
-	private String username;
+	private String userName;
 	private String password;
 	private long userMobileNumber;
 	private String userRole;
@@ -24,12 +24,12 @@ public class User {
 		this.userId = userId;
 	}
 
-	public String getUsername() {
-		return username;
+	public String getUserName() {
+		return userName;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 	public String getPassword() {
@@ -56,11 +56,11 @@ public class User {
 		this.userRole = userRole;
 	}
 
-	public User(int userId, String username, String password, int userMobileNumber,
+	public User(int userId, String userName, String password, int userMobileNumber,
 			String userRole) {
 		super();
 		this.userId = userId;
-		this.username = username;
+		this.userName = userName;
 		this.password = password;
 		this.userMobileNumber = userMobileNumber;
 		this.userRole = userRole;
@@ -73,7 +73,7 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [userId=" + userId + ", username=" + username + ", password=" + password + ", userMobileNumber="
+		return "User [userId=" + userId + ", userName=" + userName + ", password=" + password + ", userMobileNumber="
 				+ userMobileNumber + ",userRole=" + userRole + "]";
 	}
 

@@ -19,7 +19,6 @@ import com.cg.proj.repository.RequestDAO;
 import com.cg.proj.repository.UserDAO;
 import com.cg.proj.util.VehicleConstants;
 
-
 /**
  * @author SHOBHANA & Navaneeth
  *
@@ -34,7 +33,8 @@ public class RequestServiceImpl implements RequestService {
 	@Autowired
 	private UserDAO userDAO;
 
-	@Override// method to send a new request
+	// method to send a new request
+	@Override
 	public Request sendRequest(RequestDTO requestdto) throws MechanicNotFoundException, UserNotFoundException {
 
 		Optional<User> optuser = userDAO.findById(requestdto.getUserId());
@@ -54,7 +54,8 @@ public class RequestServiceImpl implements RequestService {
 		return requestDAO.save(request);
 	}
 
-	@Override//method to view the request
+	// method to view the request
+	@Override
 	public Request viewRequest(int requestId) throws RequestNotFoundException {
 		Optional<Request> optreq = requestDAO.findById(requestId);
 		if (optreq.isEmpty()) {
@@ -63,12 +64,14 @@ public class RequestServiceImpl implements RequestService {
 		return optreq.get();
 	}
 
-	@Override//method to view list of all requests
+	// method to view list of all requests
+	@Override
 	public List<Request> viewAllRequest() {
 		return requestDAO.findAll();
 	}
 
-	@Override//method to give status update
+	// method to give status update
+	@Override
 	public String requestStatusUpdate(int requestId, String requestStatus) throws RequestNotFoundException {
 		Optional<Request> optreq = requestDAO.findById(requestId);
 		if (optreq.isEmpty()) {
@@ -79,7 +82,8 @@ public class RequestServiceImpl implements RequestService {
 		return VehicleConstants.REQ_STATUS_UPDATED;
 	}
 
-	@Override//method to search mechanic based on user location
+	// method to search mechanic based on user location
+	@Override
 	public List<Mechanic> searchMechanic(String userLocation) throws MechanicNotFoundException {
 		List<Mechanic> mechanics = mechanicDAO.getMechanics(userLocation);
 		if (mechanics.isEmpty()) {

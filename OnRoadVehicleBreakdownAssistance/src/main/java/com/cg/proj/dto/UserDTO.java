@@ -7,7 +7,7 @@ public class UserDTO {
 	@Min(value = 3, message = "User ID must be minimum 3")
 	private int userId;
 	@Size(min = 3, message = "User name must be minimum 3")
-	private String username;
+	private String userName;
 	@Size(min = 3, message = "password must be minimum 3")
 	private String password;
 	@Min(value = 9, message = "User MobileNumber must be minimum 9")
@@ -25,12 +25,12 @@ public class UserDTO {
 		this.userId = userId;
 	}
 
-	public String getUsername() {
-		return username;
+	public String getUserName() {
+		return userName;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 	public String getPassword() {

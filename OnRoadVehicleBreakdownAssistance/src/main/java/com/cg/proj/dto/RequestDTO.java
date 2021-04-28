@@ -1,12 +1,11 @@
 package com.cg.proj.dto;
 
-import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 
 public class RequestDTO {
-	@Min(value = 3, message = "User ID must be minimum 3")
+	//@Min(value = 3, message = "User ID must be minimum 3")
 	private int userId;
-	@Min(value = 3, message = "Mechanic ID mut be minimum 3")
+	//@Min(value = 3, message = "Mechanic ID must be minimum 3")
 	private int mechanicId;
 	@Size(min = 3, message = "User location must have minimum 3 characters")
 	private String userLocation;

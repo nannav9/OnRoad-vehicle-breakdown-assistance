@@ -10,10 +10,11 @@ public class VehicleConstants {
 	public static final String REQ_NEW = "New";
 	public static final String REQ_SENT = "Request sent successfully and your request Id is ";
 	public static final String USER_ADDED = "User added successfully";
-	public static final String MECHANIC_ADDED = "User added successfully";
+	public static final String MECHANIC_ADDED = "Mechanic added successfully";
 	public static final String MECHANICID_NOT_AVAILABLE = "Mechanic Not Available";
 	public static final String VEHICLE_NOT_AVAILABLE = "Vehicle Not Available";
 	public static final String MECHANIC_LISTEMPTY = "Mechanic List Empty";
+	public static final String UPDATED_REQUEST = "Accepted";
 
 
 }
